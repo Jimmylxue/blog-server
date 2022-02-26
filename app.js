@@ -45,7 +45,7 @@ router.use('/upload', upload)
 
 app.use(router.routes())
 
-app.listen('666', () => {
+app.listen('9999', () => {
 	//监听端口
-	console.log('server is running in port 666! ')
+	console.log('server is running in port 9999! ')
 })

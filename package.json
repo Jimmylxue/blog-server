@@ -1,0 +1,28 @@
+{
+  "name": "jserver",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Back end service scaffolding",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "list": "pm2 ls",
+    "pro": "pm2 start app.js",
+    "stop": "pm2 stop app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ali-oss": "^6.17.1",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "mysql": "^2.18.1",
+    "pm2": "^5.1.0"
+  }
+}

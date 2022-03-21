@@ -47,6 +47,7 @@ class db {
 					reslove({ code: 1, msg: `插入了${data.affectedRows}条` })
 				}
 			})
+			connection.end()
 		})
 	}
 
@@ -64,6 +65,7 @@ class db {
 					reslove({ code: 1, message: `删除数据${data.affectedRows}条` })
 				}
 			})
+			connection.end()
 		})
 	}
 
@@ -80,6 +82,7 @@ class db {
 					reslove({ code: 1, msg: `更新了${data.affectedRows}条` })
 				}
 			})
+			connection.end()
 		})
 	}
 
@@ -101,6 +104,8 @@ class db {
 				}
 				reslove(data)
 			})
+
+			connection.end()
 		})
 	}
 
@@ -114,6 +119,7 @@ class db {
 				}
 				reslove({ code: 1, reslut: '请求成功', data })
 			})
+			connection.end()
 		})
 	}
 }

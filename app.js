@@ -9,6 +9,10 @@ import { __dirname } from './utils/index.js'
 import client from './routes/client/index.js'
 import upload from './routes/upload/index.js'
 
+// const easyMonitor = require('easy-monitor')
+import easyMonitor from 'easy-monitor'
+easyMonitor('jimmyBlogServer')
+
 const router = routers()
 
 const app = new koa()

@@ -18,12 +18,23 @@ class db {
 	}
 	constructor() {
 		this.status = ''
+		connection.on('error', this.handleError)
+	}
+
+	handleError(err) {
+		if (err) {
+			if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+				this.connect()
+			} else {
+				console.error('数据库错误', err.stack || err)
+			}
+		}
 	}
 
 	connect() {
 		return new Promise((reslove, reject) => {
 			if (this.status === '') {
-				this.status = connection.connect()
+				this.status = connection.connect(this.handleError)
 				reslove(this.status)
 			}
 			reslove(this.status)

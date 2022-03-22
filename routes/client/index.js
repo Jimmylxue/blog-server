@@ -10,6 +10,7 @@ route.get('/init', async ctx => {
 		const { id } = ctx.request.query
 		console.log(id)
 		let res2 = await dbs.find('*', 'blog', `text = '${id}'`)
+		console.log({res2})
 		let blogid = 0
 		if (res2.length === 0) {
 			await dbs.insert('blog', `('${id}')`)
@@ -26,6 +27,7 @@ route.get('/init', async ctx => {
 	} catch (error) {
 		ctx.body = { code: 10000, result: error.message }
 	}
+	console.log({result})
 	ctx.body = result
 })
 
